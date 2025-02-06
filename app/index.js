@@ -3,6 +3,7 @@ import cors from "cors";
 import morgan from "morgan";
 
 import Routes from "$app/routes/index.js";
+import { appConfig } from "$app/config/index.js";
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use("*", (req, res) =>
     url: req.originalUrl,
     method: req.method,
     message: "Page not found",
+    version: appConfig.version,
   })
 );
 

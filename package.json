@@ -1,5 +1,5 @@
 {
-  "name": "pgpooladmin-api",
+  "name": "pgpooladmin-cloud-api",
   "version": "1.0.0",
   "type": "module",
   "main": "server.js",
