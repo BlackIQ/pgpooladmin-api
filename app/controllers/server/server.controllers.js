@@ -29,8 +29,10 @@ export const SINGLE = async (req, res) => {
 };
 
 export const ALL = async (req, res) => {
+  const filter = req.query;
+  
   try {
-    const servers = await Server.find().populate({
+    const servers = await Server.find(filter).populate({
       path: "owner",
       model: User,
     });
