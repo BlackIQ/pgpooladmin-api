@@ -1,6 +1,9 @@
 # Use the Node base image as the build stage
 FROM node:alpine AS build
 
+# Install cURL
+RUN apk add curl
+
 # Set the working directory in the container
 WORKDIR /app
 
@@ -15,6 +18,9 @@ RUN mv .env.local .env
 
 # Install dependencies
 RUN npm install
+
+# Install Nodemonz
+RUN npm i -g nodemon
 
 # Expose the container port
 EXPOSE 8000
